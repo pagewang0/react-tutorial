@@ -66,9 +66,9 @@ class Board extends React.Component {
       return <div className="board-row"
         key={row}>
         {
-          !order
-          ? this.renderColumn(row, height)
-          : this.renderColumn(row, height).reverse()
+          order
+            ? this.renderColumn(row, height).reverse()
+            : this.renderColumn(row, height)
         }
       </div>
     })
@@ -77,7 +77,7 @@ class Board extends React.Component {
   render() {
     const { order, width } = this.props
     return (
-      <div>{!order ? this.renderRow(width) : this.renderRow(width).reverse()}</div>
+      <div>{order ? this.renderRow(width).reverse() : this.renderRow(width)}</div>
     );
   }
 }
