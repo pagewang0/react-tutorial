@@ -141,11 +141,6 @@ class Game extends React.Component {
   handleDraw(winer) {
     const { stepNumber, width, height } = this.state
 
-    // if (width * height === stepNumber && !winer) {
-    //   return true
-    // }
-
-    // return false
     return width * height === stepNumber && !winer
   }
 
