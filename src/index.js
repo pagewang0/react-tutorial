@@ -141,11 +141,12 @@ class Game extends React.Component {
   handleDraw(winer) {
     const { stepNumber, width, height } = this.state
 
-    if (width * height === stepNumber && !winer) {
-      return true
-    }
+    // if (width * height === stepNumber && !winer) {
+    //   return true
+    // }
 
-    return false
+    // return false
+    return width * height === stepNumber && !winer
   }
 
   jumpTo(step) {
@@ -164,7 +165,7 @@ class Game extends React.Component {
     const draw = this.handleDraw(winer)
 
     const moves = history.map((step, move) => {
-      const desc = move ? `Go to move #${move} (x: ${step.row} y: ${step.column})` : 'Go to game start'
+      const desc = move ? `Go to move #${move} (row: ${step.row} col: ${step.column})` : 'Go to game start'
 
       return (
         <li key={move}>
